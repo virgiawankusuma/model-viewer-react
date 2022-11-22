@@ -34,7 +34,7 @@ model-viewer {
   text-decoration: none;
 }
 
-.hotspot {
+/* .hotspot {
   background: #fff;
   border-radius: 32px;
   border: 0;
@@ -92,4 +92,4 @@ model-viewer {
   pointer-events: none;
   transform: translateY(calc(-50% + 4px));
   transition: transform 0.3s, opacity 0.3s;
-}
+} */
