@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import '@google/model-viewer';
 
 export default function Model() {
