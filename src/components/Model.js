@@ -1,7 +1,10 @@
 /* eslint-disable no-unused-vars */
 import '@google/model-viewer';
+import { useEffect } from 'react';
 
 export default function Model() {
+  const modelViewer = document.querySelector('#model')
+
   function linkHandler(e, url) {
     e.preventDefault();
     window.open(url, '_blank');
@@ -10,10 +13,18 @@ export default function Model() {
   const getCord = async (event) => 
   { 
     console.log(event.screenX, event.screenY) 
-    const modelViewer = document.querySelector('#model')
     const vals = modelViewer.positionAndNormalFromPoint( event.screenX, event.screenY )
     console.log(vals) 
   }
+
+  const modelLoaded = (e) => {
+    console.log('Model loaded');
+  };
+
+  useEffect(() => {
+    modelLoaded();
+  }, [modelViewer])
+
 
   return (
     <model-viewer
