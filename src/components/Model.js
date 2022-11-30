@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import '@google/model-viewer';
 import React, { useEffect, useState } from 'react';
-import ReactPlayer from "react-player";
 
 export default function Model() {
   const [model, setModel ] = useState(null);
@@ -24,69 +23,56 @@ export default function Model() {
     window.open(url, '_blank');
   }
 
-  
-  if(model) {
+  const PlayAudio = () => {
     audio.play();
   }
 
   return (
     <model-viewer
-      onClick={getCord}
+      onClick={() => PlayAudio()}
       id="model"
-      src="./models/kurokuro.glb"
+      src="./models/kura12.glb"
       ios-src=""
       alt="A 3D model of an astronaut"
       shadow-intensity="1"
       camera-controls
       ar
       // ar-modes="scene-viewer webxr quick-look"
-      ar-modes="webxr quick-look scene-viewer"
+      // ar-modes="webxr quick-look scene-viewer"
       // ar-modes="quick-look webxr scene-viewer"
+      modes="webxr scene-viewer quick-look"
       camera-orbit="17.95deg 85.97deg 16.01m"
       auto-rotate
       autoplay
     >
       <button
-        onClick={(e) => linkHandler(e, 'https://sekurovillage.com')}
+        onClick={(e) => linkHandler(e, 'tel:02917701999')}
         className="relative z-10 p-[6px] bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse hover:animate-none"
-        slot="hotspot-1"
-        data-position="0.0328607537850399m 0.06633109121880185m -0.013010329962359991m"
-        data-normal="0.6289291004261345m -0.3165854963824588m 0.7100857765914239m"
-        data-visibility-attribute="visible"
+        slot="hotspot-9" 
+        data-position="0.11822734465857843m 0.1236534911594938m -0.04523120424710214m" data-normal="0m 0m 1m" d
+        ata-visibility-attribute="visible"
       >
         <div
-          className="bg-white/80 text-black font-bold rounded-full py-2 px-3 text-sm shadow-lg cursor-pointer hover:bg-white transition-all duration-200 ease-in-out block absolute w-max left-[calc(100%+.3rem)]"
+          className="bg-white/80 text-black font-bold rounded-full py-2 px-3 text-sm shadow-lg cursor-pointer hover:bg-white transition-all duration-200 ease-in-out block absolute w-max top-[calc(100%+.3rem)]"
         >
-          Visit Our Website
+          Contact Us
         </div>
       </button>
       <button
+        onClick={(e) => linkHandler(e, 'https://sekurovillage.digidaxa.com')}
         className="relative z-10 p-[6px] bg-white rounded-full shadow-lg flex items-center justify-center animate-pulse hover:animate-none"
-        slot="hotspot-2"
-        data-position="0.02610224m 0.01458751m -0.004978945m" 
-        data-normal="-0.602551m 0.7856147m -0.1405055m"
-        data-visibility-attribute="visible"
+        slot="hotspot-10" 
+        data-position="-0.12218712196472194m 0.12394519401900589m -0.04261490154659383m" data-normal="-3.264378720429288e-10m -8.193775260336006e-8m 0.9999999999999967m" data-visibility-attribute="visible"
       >
         <div
-          className="bg-white/80 text-black font-bold rounded-full py-2 px-3 text-sm shadow-lg cursor-pointer hover:bg-white transition-all duration-200 ease-in-out block absolute w-max right-[calc(100%+.3rem)]"
+          className="bg-white/80 text-black font-bold rounded-full py-2 px-3 text-sm shadow-lg cursor-pointer hover:bg-white transition-all duration-200 ease-in-out block absolute w-max top-[calc(100%+.3rem)]"
         >
-          Hello
+          Virtual Tour
         </div>
       </button>
-      {/* <ReactPlayer 
-        // url={[
-          //   {src: '/bgm/onesummerday.mp3', type: 'audio/mp3'},
-        // ]}  
-        id="audio"
-        url="/bgm/onesummerday.mp3"
-        width="400px"
-        height="50px"
-        playing={true}
-        controls={true}
-      /> */}
+
       <audio 
         id="audio"
-        // controls
         loop
       >
         <source src="/bgm/onesummerday.mp3" type="audio/mpeg"></source>
