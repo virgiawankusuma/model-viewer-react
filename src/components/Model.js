@@ -1,22 +1,22 @@
 /* eslint-disable no-unused-vars */
 import '@google/model-viewer';
 import React, { useEffect, useState } from 'react';
+import { 
+  FaCamera,
+  FaVolumeMute,
+  FaVolumeUp,
+   
+} from 'react-icons/fa';
 
 export default function Model() {
   const [model, setModel ] = useState(null);
   const [audio, setAudio] = useState(null);
+  const [isMuted, setIsMuted] = useState(false);
   
   useEffect(() => {
     setModel(document.querySelector('#model'));
     setAudio(document.querySelector('#audio'));
   }, []);
-    
-  const getCord = async (event) => 
-  {
-    console.log(event.screenX, event.screenY) 
-    const vals = model.positionAndNormalFromPoint( event.screenX, event.screenY )
-    console.log(vals)
-  }
 
   const linkHandler = (e, url) => {
     e.preventDefault();
@@ -25,6 +25,11 @@ export default function Model() {
 
   const PlayAudio = () => {
     audio.play();
+  }
+
+  const MuteAudio = () => {
+    audio.muted = !audio.muted;
+    setIsMuted(!isMuted);
   }
 
   return (
@@ -70,7 +75,19 @@ export default function Model() {
           Virtual Tour
         </div>
       </button>
-
+      <button 
+        onClick={() => MuteAudio()}
+        className="absolute flex gap-2 items-center bottom-4 left-4 p-2 border-[1px] border-white rounded-full bg-white shadow shadow-secondary hover:shadow-lg hover:shadow-secondary text-primary transition-all duration-150"
+      >
+        {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+      </button>
+      <button 
+        slot="ar-button"
+        className="absolute flex gap-2 items-center bottom-4 right-4 py-1 px-3 border-[1px] border-secondary rounded-full bg-secondary shadow shadow-secondary hover:shadow-lg hover:shadow-secondary text-white transition-all duration-150"
+      >
+        <span>Enable AR</span>
+        <FaCamera />
+      </button>
       <audio 
         id="audio"
         loop

@@ -1,7 +1,4 @@
 export default function Footer() {
-  const launchAR = () => {
-    document.getElementById('default-ar-button').click();
-  }
 
   return (
     <footer
@@ -15,11 +12,6 @@ export default function Footer() {
       <div
         className="flex flex-row flex-wrap justify-center gap-3"
       >
-        <button
-          onClick={() => launchAR()} 
-          className="py-3 px-5 font-bold border-[1px] border-secondary rounded-full bg-secondary shadow shadow-secondary hover:shadow-lg hover:shadow-secondary text-white transition-all duration-150">
-          Play AR
-        </button>
         <button
           onClick={() => window.open('https://sekurovillage.digidaxa.com', '_blank')}
           className="py-3 px-5 font-bold border-[1px] border-primary rounded-full bg-primary shadow shadow-primary hover:shadow-lg hover:shadow-primary text-white transition-all duration-150">
