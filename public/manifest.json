@@ -18,7 +18,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "./augmented-reality",
   "display": "standalone",
   "theme_color": "#5AA59A",
   "background_color": "#ffffff"

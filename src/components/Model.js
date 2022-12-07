@@ -92,7 +92,7 @@ export default function Model() {
         id="audio"
         loop
       >
-        <source src="/bgm/onesummerday.mp3" type="audio/mpeg"></source>
+        <source src="./bgm/onesummerday.mp3" type="audio/mpeg"></source>
       </audio>
     </model-viewer>
   )
