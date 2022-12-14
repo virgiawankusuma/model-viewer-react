@@ -24,7 +24,12 @@ export default function Model() {
   }
 
   const PlayAudio = () => {
-    audio.play();
+    // audio.play();
+    // delay audio play by 1 second
+    setTimeout(() => {
+      audio.play();
+    }
+    , 4000);
   }
 
   const MuteAudio = () => {
@@ -34,8 +39,8 @@ export default function Model() {
 
   return (
     <model-viewer
-      onClick={() => PlayAudio()}
       id="model"
+      onClick={() => PlayAudio()}
       src="./models/kura12.glb"
       ios-src=""
       alt="A 3D model of an astronaut"
@@ -83,6 +88,7 @@ export default function Model() {
       </button>
       <button 
         slot="ar-button"
+        onClick={() => PlayAudio()}
         className="absolute flex gap-2 items-center bottom-4 right-4 py-1 px-3 border-[1px] border-secondary rounded-full bg-secondary shadow shadow-secondary hover:shadow-lg hover:shadow-secondary text-white transition-all duration-150"
       >
         <span>Enable AR</span>
@@ -90,9 +96,8 @@ export default function Model() {
       </button>
       <audio 
         id="audio"
-        loop
       >
-        <source src="./bgm/onesummerday.mp3" type="audio/mpeg"></source>
+        <source src="./audio/Hudson-balanced.mp3" type="audio/mpeg"></source>
       </audio>
     </model-viewer>
   )
