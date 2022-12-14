@@ -24,12 +24,7 @@ export default function Model() {
   }
 
   const PlayAudio = () => {
-    // audio.play();
-    // delay audio play by 1 second
-    setTimeout(() => {
-      audio.play();
-    }
-    , 4000);
+    audio.play();
   }
 
   const MuteAudio = () => {
